@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>墨境 · AI漫剧创作系统</title>
+<title>MoJing 墨境 · AI动态漫剧生成系统</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap');
 
@@ -298,6 +298,19 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
   font-size:12px;color:var(--purple2);letter-spacing:.5px;
   margin-bottom:28px;position:relative;z-index:1;animation:fadeUp .6s ease both;
 }
+
+.hero-en-name{
+  position:relative;z-index:1;
+  font-family:'Orbitron',monospace;
+  font-size:28px;font-weight:700;
+  letter-spacing:10px;
+  color:rgba(237,233,248,.82);
+  margin-bottom:10px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,#fff,var(--purple2),var(--teal));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:fadeUp .6s .05s ease both;
+}
 .hero-title{
   font-family:'Noto Serif SC',serif;
   font-size:72px;font-weight:600;line-height:1.1;
@@ -572,8 +585,8 @@ body.has-sidebar #story{padding-top:24px;}
   <div class="sidebar-logo">
     <div class="sidebar-logo-icon">🖋</div>
     <div>
-      <div class="sidebar-logo-text">墨境</div>
-      <div class="sidebar-logo-sub">AIGC PLATFORM</div>
+      <div class="sidebar-logo-text">MoJing</div>
+      <div class="sidebar-logo-sub">墨境 · AI COMIC DRAMA</div>
     </div>
   </div>
 
@@ -627,7 +640,7 @@ body.has-sidebar #story{padding-top:24px;}
 
   <!-- 封面专用极简导航 -->
   <nav class="land-nav" id="landNav">
-    <div class="land-nav-logo"><div class="land-nav-logo-dot">🖋</div>墨 境</div>
+    <div class="land-nav-logo"><div class="land-nav-logo-dot">🖋</div>MoJing · 墨境</div>
     <div class="land-nav-right">
       <button class="land-btn-ghost" onclick="scrollToAbout()">了解更多</button>
       <button class="land-btn-solid" onclick="showLoginModal()">登录 / 体验</button>
@@ -636,9 +649,10 @@ body.has-sidebar #story{padding-top:24px;}
 
   <!-- Hero 区 -->
   <section class="hero-section" id="heroSection">
-    <div class="hero-tag">✦ AI 驱动的动态漫剧创作平台</div>
+    <div class="hero-tag">✦ MoJing · AI 驱动的动态漫剧创作平台</div>
+    <div class="hero-en-name">MoJing</div>
     <h1 class="hero-title">动态漫剧<br><span class="hero-title-line2">生成系统</span></h1>
-    <p class="hero-desc">基于生成式 AI 的智能内容创作平台</p>
+    <p class="hero-desc">MoJing · 基于生成式 AI 的智能内容创作平台</p>
     <p class="hero-desc2">输入故事文本，AI 自动解析分镜脚本，结合角色形象一致性生成，<br>输出配音动画，完成从创意到成品的完整创作流程。</p>
     <div class="hero-btns">
       <button class="hero-cta" onclick="showLoginModal()">开始创作 <span class="hero-cta-arrow">→</span></button>
@@ -646,8 +660,8 @@ body.has-sidebar #story{padding-top:24px;}
     </div>
     <div class="hero-tech">
       <span class="hero-tech-item">豆包 LLM</span>
-      <span class="hero-tech-item">豆包 Seedream 4.5</span>
-      <span class="hero-tech-item">NovelAI v4.5</span>
+      <span class="hero-tech-item">豆包 Seedream 5.0 Lite</span>
+      <span class="hero-tech-item">统一生图链路</span>
       <span class="hero-tech-item">CharRef</span>
       <span class="hero-tech-item">即梦 AI</span>
       <span class="hero-tech-item">Seedance 1.5 Pro</span>
@@ -663,7 +677,7 @@ body.has-sidebar #story{padding-top:24px;}
   <!-- 介绍区 -->
   <section class="about-section" id="aboutSection">
     <div class="about-nav-hint">← 返回 &nbsp;·&nbsp; <span>ABOUT</span> &nbsp;·&nbsp; 系统介绍</div>
-    <h2 class="about-title">动态漫剧自动生成系统</h2>
+    <h2 class="about-title">MoJing 动态漫剧自动生成系统</h2>
     <p class="about-subtitle">将故事文本转化为完整的动态漫剧视频。系统基于大语言模型、图像生成模型与语音合成技术，构建从创意输入到视频输出的全链路 AIGC 创作流程。</p>
 
     <!-- 核心功能 4 格 -->
@@ -679,29 +693,29 @@ body.has-sidebar #story{padding-top:24px;}
         <div class="about-card-num">02</div>
         <div class="about-card-icon">👤</div>
         <div class="about-card-title">角色生成</div>
-        <div class="about-card-desc">NovelAI 生成高质量角色立绘三视图，Character Reference 锁定角色形象一致性。</div>
+        <div class="about-card-desc">豆包 Seedream 5.0 Lite 生成高质量角色立绘与分镜画面，增强动作理解、构图稳定性与参考一致性。</div>
       </div>
       <div class="about-card">
         <div class="about-card-num">03</div>
         <div class="about-card-icon">🎬</div>
         <div class="about-card-title">分镜生成</div>
-        <div class="about-card-desc">豆包解析剧本生成分镜脚本，NovelAI 逐镜生成高一致性画面，支持修正重绘。</div>
+        <div class="about-card-desc">豆包 Seed 2.0 Lite 解析剧本生成高质量分镜脚本，Seedream 5.0 Lite 逐镜生成高一致性画面，支持修正重绘。</div>
       </div>
       <div class="about-card">
         <div class="about-card-num">04</div>
         <div class="about-card-icon">🎵</div>
         <div class="about-card-title">视频生成</div>
-        <div class="about-card-desc">edge-tts 语音配音，即梦AI 生成视频动画，一键合成并导出完整 MP4。</div>
+        <div class="about-card-desc">edge-tts 语音配音，Seedance 1.5 Pro 生成视频动画，并保留跳转即梦官网调用最新模型的可选入口，一键合成并导出完整 MP4。</div>
       </div>
     </div>
 
     <!-- 技术栈 -->
     <div class="about-tech-title">技术组件</div>
     <div class="about-tech-grid">
-      <div class="about-tech-card"><div class="about-tech-dot" style="background:var(--purple);"></div><div><div class="about-tech-name">豆包 doubao-1-5-lite</div><div class="about-tech-role">LLM · 剧本/分镜脚本</div></div></div>
-      <div class="about-tech-card"><div class="about-tech-dot" style="background:#a78bfa;"></div><div><div class="about-tech-name">豆包 Seedream 4.5</div><div class="about-tech-role">文生图 · 分镜画面</div></div></div>
-      <div class="about-tech-card"><div class="about-tech-dot" style="background:var(--blue);"></div><div><div class="about-tech-name">NovelAI v4.5</div><div class="about-tech-role">角色立绘 · CharRef</div></div></div>
-      <div class="about-tech-card"><div class="about-tech-dot" style="background:var(--teal);"></div><div><div class="about-tech-name">即梦 AI</div><div class="about-tech-role">视频生成 · 动态合成</div></div></div>
+      <div class="about-tech-card"><div class="about-tech-dot" style="background:var(--purple);"></div><div><div class="about-tech-name">豆包 Seed 2.0 Lite</div><div class="about-tech-role">LLM · 剧本/分镜脚本</div></div></div>
+      <div class="about-tech-card"><div class="about-tech-dot" style="background:#a78bfa;"></div><div><div class="about-tech-name">豆包 Seedream 5.0 Lite</div><div class="about-tech-role">文生图 · 分镜画面</div></div></div>
+      <div class="about-tech-card"><div class="about-tech-dot" style="background:var(--blue);"></div><div><div class="about-tech-name">Seedream 5.0 Lite</div><div class="about-tech-role">角色立绘 · CharRef</div></div></div>
+      <div class="about-tech-card"><div class="about-tech-dot" style="background:var(--teal);"></div><div><div class="about-tech-name">Seedance 1.5 Pro</div><div class="about-tech-role">图生视频 · 主链路（可选跳转即梦）</div></div></div>
       <div class="about-tech-card"><div class="about-tech-dot" style="background:#34d399;"></div><div><div class="about-tech-name">豆包 Seedance 1.5 Pro</div><div class="about-tech-role">图生视频 · 高质量</div></div></div>
       <div class="about-tech-card"><div class="about-tech-dot" style="background:var(--pink);"></div><div><div class="about-tech-name">edge-tts</div><div class="about-tech-role">语音配音合成</div></div></div>
     </div>
@@ -709,7 +723,7 @@ body.has-sidebar #story{padding-top:24px;}
     <!-- 底部登录入口 -->
     <div class="about-cta-area">
       <div class="about-cta-title">立即开始创作</div>
-      <div class="about-cta-sub">登录系统，体验完整 AI 漫剧创作流程</div>
+      <div class="about-cta-sub">登录 MoJing，体验完整 AI 动态漫剧创作流程</div>
       <div style="display:flex;gap:12px;justify-content:center;">
         <button class="hero-cta" onclick="showLoginModal()">登录系统 →</button>
         <button class="hero-outline" onclick="showGuestAndGo()">游客体验</button>
@@ -724,8 +738,8 @@ body.has-sidebar #story{padding-top:24px;}
   <div class="login-modal">
     <button class="lm-close" onclick="hideLoginModal()">✕</button>
     <div class="lm-icon">🖋</div>
-    <div class="lm-title">墨 境</div>
-    <div class="lm-sub">AI 漫剧创作系统</div>
+    <div class="lm-title">MoJing · 墨境</div>
+    <div class="lm-sub">AI 动态漫剧创作系统</div>
     <div class="form-group"><label>用户名</label><input type="text" class="form-input" id="loginUsername" placeholder="admin" value="admin" onkeydown="if(event.key==='Enter')doLogin()"></div>
     <div class="form-group"><label>密码</label><input type="password" class="form-input" id="loginPassword" placeholder="••••••••" value="admin123" onkeydown="if(event.key==='Enter')doLogin()"></div>
     <button class="btn-full btn-primary-full" onclick="doLogin()">登 录</button>
@@ -780,7 +794,7 @@ body.has-sidebar #story{padding-top:24px;}
       </div>
       <div class="dash-card" onclick="showScreen('characters')" style="display:flex;align-items:center;gap:16px;padding:22px 24px;">
         <div style="width:40px;height:40px;border-radius:10px;background:rgba(138,92,255,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👤</div>
-        <div><div class="dash-card-title" style="margin-bottom:3px;">角色生成</div><div class="dash-card-desc">NovelAI 生成角色立绘三视图</div></div>
+        <div><div class="dash-card-title" style="margin-bottom:3px;">角色生成</div><div class="dash-card-desc">Seedream 5.0 Lite 生成角色立绘三视图</div></div>
       </div>
     </div>
     <!-- 最近作品（空状态）-->
@@ -835,17 +849,32 @@ body.has-sidebar #story{padding-top:24px;}
         </select>
       </div>
       <div>
+        <div style="font-size:10px;color:var(--muted);margin-bottom:8px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">预设剧本</div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <select class="form-select" id="storyCreatePresetSelect" onchange="syncStoryCreatePresetHint()" style="flex:1;">
+            <option value="">-- 选择预设剧本 --</option>
+            <option value="dragon_slayer_power_fantasy">勇者斩龙·爽剧版（6镜 / 每镜4秒）</option>
+          </select>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px;">
+          <button class="btn-sm btn-outline-sm" style="font-size:11px;color:var(--teal);" onclick="applyStoryCreatePreset()">一键填入</button>
+          <button class="btn-sm btn-outline-sm" style="font-size:11px;color:var(--purple2);" onclick="previewStoryCreatePreset()">直接预览</button>
+          <button class="btn-sm btn-outline-sm" style="font-size:11px;color:#fbbf24;" onclick="sendStoryPresetToStoryboard()">填到分镜</button>
+        </div>
+        <div id="storyCreatePresetHint" style="margin-top:6px;font-size:11px;color:var(--muted);line-height:1.55;">选择后可快速填入创作方向和额外要求，也可直接预览成剧本，方便录 demo。</div>
+      </div>
+      <div>
         <div style="font-size:10px;color:var(--muted);margin-bottom:8px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">创作方向</div>
-        <textarea class="form-textarea" id="storyDirection" style="min-height:90px;resize:none;" placeholder="描述你想要的故事走向&#10;例: 放学后，教室里只剩两人..."></textarea>
+        <textarea class="form-textarea" id="storyDirection" style="min-height:90px;resize:none;" placeholder="描述你想要的故事走向&#10;例：主角：18岁勇者，蓝白圣骑士轻甲，手持圣剑&#10;目标：击退远古巨龙&#10;场景：焦黑平原，裂痕、灰烬、低空烟尘、夕阳&#10;冲突：巨龙压迫逼近，勇者先被震退再反击&#10;结尾：巨龙倒地失去攻势，勇者收剑回稳"></textarea>
       </div>
       <div>
         <div style="font-size:10px;color:var(--muted);margin-bottom:8px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">额外要求 <span style="opacity:.4;font-weight:400;">可选</span></div>
-        <textarea class="form-textarea" id="storyCustom" style="min-height:52px;resize:none;" placeholder="例: 需要2个角色，结局温暖..."></textarea>
+        <textarea class="form-textarea" id="storyCustom" style="min-height:52px;resize:none;" placeholder="例：镜头更电影感；第一镜要勇者背后仰望天空巨龙；最后一镜必须战斗结束；不要双龙、不要换装"></textarea>
       </div>
       <button class="btn-sm btn-purple" style="width:100%;padding:13px;font-size:14px;font-weight:600;" onclick="generateStory()" id="btnGenStory">✦ 豆包AI生成剧本</button>
       <div style="padding:12px;background:rgba(138,92,255,.05);border:1px solid rgba(138,92,255,.1);border-radius:8px;font-size:11px;color:var(--muted);line-height:1.7;">
         <div style="color:var(--purple2);font-weight:600;margin-bottom:4px;">生成内容</div>
-        剧本文本 · 角色外貌（英文）· 场景设定
+        剧本文本 · 中文角色外貌锁 · 纯环境场景设定 · 分镜友好结构
       </div>
     </div>
     <!-- 右: 结果 -->
@@ -886,7 +915,7 @@ body.has-sidebar #story{padding-top:24px;}
 <!-- 角色库 -->
 <div id="characters" class="screen">
   <div class="page-header">
-    <div><div class="page-title">角色库</div><div class="page-sub">设计角色 → NovelAI 生成立绘（正/侧/脸三视图）</div></div>
+    <div><div class="page-title">角色库</div><div class="page-sub">设计角色 → Seedream 5.0 Lite 生成立绘（正/侧/脸三视图）</div></div>
     <button class="btn-sm btn-teal" onclick="showExtractModal()">✨ 从剧本提取角色</button>
   </div>
   <div class="char-layout">
@@ -899,7 +928,7 @@ body.has-sidebar #story{padding-top:24px;}
         <div class="form-group"><label>画风</label><select class="form-select" id="charStyle"><option value="日漫">日漫</option><option value="国漫">国漫</option><option value="美漫">美漫</option><option value="写实">写实</option></select></div>
       </div>
       <div class="form-group"><label>配音音色</label><select class="form-select" id="charVoice"><option value="longxiaochun">龙小淳（女·温柔）</option><option value="longwan">龙婉（女·知性）</option><option value="longshu">龙舒（女·活泼）</option><option value="longcheng">龙程（男·磁性）</option><option value="longhua">龙华（男·阳光）</option><option value="longxiang">龙翔（男·沉稳）</option></select></div>
-      <button class="btn-sm btn-purple" style="width:100%;" id="btnCreateChar" onclick="generateCharacter()">✦ NovelAI 生成立绘</button>
+      <button class="btn-sm btn-purple" style="width:100%;" id="btnCreateChar" onclick="generateCharacter()">✦ Seedream 5.0 Lite 生成立绘</button>
       <div class="char-preview-box" id="charPreviewBox">
         <img id="charPreviewImg" src="" alt="预览">
         <div class="char-preview-placeholder" id="charPreviewPlaceholder">
@@ -931,7 +960,7 @@ body.has-sidebar #story{padding-top:24px;}
 <!-- 分镜生成页 -->
 <div id="storyboard" class="screen">
   <div class="page-header">
-    <div><div class="page-title">分镜生成</div><div class="page-sub">豆包解析剧情脚本 · NovelAI 逐镜生成画面 · 全景场景约束</div></div>
+    <div><div class="page-title">分镜生成</div><div class="page-sub">豆包 Seed 2.0 Lite 解析剧情脚本 · Seedream 5.0 Lite 逐镜生成画面 · 全景场景约束</div></div>
     <div style="display:flex;gap:10px;"><button class="btn-sm btn-teal" onclick="showScreen('preview')" id="btnToPreview" style="display:none;">→ 去配音预览</button></div>
   </div>
   <div class="sb-layout">
@@ -944,7 +973,19 @@ body.has-sidebar #story{padding-top:24px;}
           <span style="font-size:12px;color:var(--muted);">未选择角色（将使用全部）</span>
         </div>
       </div>
+      <div class="form-group">
+        <label>预设故事 <span style="color:var(--muted);font-size:10px;">（一键填入剧情、导演要求、角色和场景）</span></label>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <select class="form-select" id="storyboardPresetSelect" onchange="syncStoryboardPresetHint()" style="flex:1;">
+            <option value="">-- 选择预设故事 --</option>
+            <option value="dragon_slayer_power_fantasy">勇者斩龙·爽剧版（6镜 / 每镜4秒）</option>
+          </select>
+          <button class="btn-sm btn-outline-sm" style="color:var(--teal);white-space:nowrap;" onclick="applyStoryboardPreset()">一键填入</button>
+        </div>
+        <div id="storyboardPresetHint" style="margin-top:6px;font-size:11px;color:var(--muted);line-height:1.55;">选择预设后会自动填入剧情文本、分镜导演要求和焦黑平原场景。</div>
+      </div>
       <div class="form-group"><label>剧情文本 *</label><textarea class="form-textarea" id="storyInput" style="min-height:140px;" placeholder="在这里输入剧情内容…"></textarea></div>
+      <div class="form-group"><label>分镜生成提示词 / 导演要求 <span style="color:var(--muted);font-size:10px;">（给LLM规范分镜，不替代剧情）</span></label><textarea class="form-textarea" id="storyboardPromptGuide" style="min-height:58px;resize:vertical;" placeholder="例：保留我写的每一镜动作；Seedream 5.0 Lite首帧图提示词写静态关键帧；Seedance视频运动提示词只写4秒运动，不要重复人物地点设定。"></textarea></div>
       <div class="form-row">
         <div class="form-group"><label>画风</label><select class="form-select" id="styleSelect"><option value="日漫">日漫</option><option value="国漫">国漫</option><option value="美漫">美漫</option><option value="写实">写实</option><option value="水墨">水墨</option><option value="赛博朋克">赛博朋克</option></select></div>
         <div class="form-group"><label>全局场景</label><input type="text" class="form-input" id="globalScene" placeholder="废弃图书馆"></div>
@@ -954,11 +995,11 @@ body.has-sidebar #story{padding-top:24px;}
         <div class="form-group">
           <label style="display:flex;align-items:center;gap:6px;">
             生成引擎
-            <span style="font-size:10px;color:var(--muted);">(豆包=理解中文/免费额度，NAI=动漫画风/消耗Anlas)</span>
+            <span style="font-size:10px;color:var(--muted);">(Seedream 5.0 Lite 中文主链路)</span>
           </label>
           <select class="form-select" id="engineSelect">
-            <option value="doubao" selected>豆包 Seedream 4.5（推荐·理解场景强）</option>
-            <option value="nai">NovelAI v4.5（动漫画风·消耗Anlas）</option>
+            <option value="doubao" selected>豆包 Seedream 5.0 Lite（推荐·理解更强）</option>
+            
           </select>
         </div>
         <div class="form-group">
@@ -1071,7 +1112,8 @@ body.has-sidebar #story{padding-top:24px;}
                 <th style="padding:8px;border:1px solid var(--border);color:var(--purple2);">动作</th>
                 <th style="padding:8px;border:1px solid var(--border);color:var(--purple2);width:60px;">情绪</th>
                 <th style="padding:8px;border:1px solid var(--border);color:var(--purple2);width:120px;">台词</th>
-                <th style="padding:8px;border:1px solid var(--border);color:var(--purple2);width:140px;">即梦提示词</th>
+                <th style="padding:8px;border:1px solid var(--border);color:var(--purple2);width:220px;">Seedream 5.0 Lite首帧图提示词</th>
+                <th style="padding:8px;border:1px solid var(--border);color:var(--purple2);width:220px;">Seedance视频运动提示词</th>
                 <th style="padding:8px;border:1px solid var(--border);color:var(--purple2);width:40px;">操作</th>
               </tr>
             </thead>
@@ -1125,9 +1167,9 @@ body.has-sidebar #story{padding-top:24px;}
             <div>
               <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:4px;">每镜时长</label>
               <select class="form-select" id="seedanceDuration" style="font-size:12px;">
-                <option value="auto">🧠 智能（2~10s/镜）</option>
-                <option value="4">4 秒（极快，省 token）</option>
-                <option value="5" selected>5 秒（标准）</option>
+                <option value="4" selected>4 秒（固定，demo推荐）</option>
+                <option value="auto">🧠 智能（不推荐，可能改变总时长）</option>
+                <option value="5">5 秒（备用）</option>
                 <option value="6">6 秒（稍慢）</option>
                 <option value="7">7 秒</option>
                 <option value="8">8 秒（适合复杂动作）</option>
@@ -1259,6 +1301,175 @@ const State = {
   lastCustomAngleUrl: '',
   lastCustomAngleLocal: '',
 };
+
+const STORY_PRESETS = {
+  dragon_slayer_power_fantasy: {
+    name: '勇者斩龙·爽剧版（6镜 / 每镜4秒）',
+    genre: '热血',
+    style: '日漫',
+    lengthMode: '长篇',
+    globalScene: '焦黑平原，焦土遍布纵横裂痕，低空烟尘翻涌，残橙夕阳压低',
+    characterNames: ['少年勇者', '远古巨龙'],
+    hint: '压迫建立 → 龙爪拍地闪避 → 巨龙向勇者所在地面喷火 → 勇者跃空重剑下劈 → 光柱笼罩巨龙 → 勇者落地，留下巨龙尸体。',
+    direction: `主角：18岁左右少年勇者，蓝白圣骑士轻甲，深蓝短披风，手持金色十字护手银白圣剑。
+对手：远古巨龙，黑曜石鳞片，红色发光眼，弯曲黑角，红黑翼膜巨大双翼，体型远大于勇者。
+场景：焦黑平原，焦土遍布纵横裂痕，低空烟尘翻涌，残橙夕阳压低。
+剧情：压迫建立 → 龙爪拍地闪避 → 巨龙向勇者所在地面喷火 → 勇者跳到高空双手举剑过头顶重剑下劈 → 圣光光柱完整笼罩并终结巨龙 → 勇者落地收势，后方留下巨龙尸体。`,
+    custom: `请生成分镜友好的中文剧本，不要写成小说散文。严格保留六镜动作弧线：
+1. 压迫建立：小体型勇者面对巨大巨龙。
+2. 拍地闪避：巨龙龙爪重击地面，裂地、碎石、烟尘爆开，勇者跳开。
+3. 喷火压制：巨龙向勇者原先所在地面喷火，勇者脱离火焰路径。
+4. 高空蓄力：勇者跃至高空，双手举剑过头顶，准备自上而下重斩。
+5. 光柱终结：圣光柱完整笼罩巨龙，表现压倒性终结技。
+6. 结果收束：勇者落地站稳收势，远古巨龙尸体倒伏在后方，战斗结束。
+不要把结尾写成继续对峙；不要让巨龙缩成坐骑大小；不要出现双龙。`,
+    storyText: `第一镜：巨龙压迫。远景仰视，少年勇者背对镜头站在裂地前景，仰望高空中的远古巨龙，巨龙低头俯视形成压迫感。
+
+第二镜：龙爪拍地闪避。中景仰视，只露出远古巨龙的一只巨大前爪从上方猛砸焦土地面，落点砸出深坑、放射状裂痕、碎石和烟尘爆开，少年勇者从落点旁高高跳起，在空中完成闪避。
+
+第三镜：怒吼蓄力。中景仰视，远古巨龙朝少年勇者怒吼继续施压，少年勇者在前景压低重心，双手握剑摆出蓄力姿势，准备跃向高空。
+
+第四镜：高空蓄力。单人特写仰视，只出现少年勇者一个主体，勇者跃至高空悬停，双手高举正常长度圣剑过头顶，剑尖指向天空，准备下一瞬向下挥砍。
+
+第五镜：终结贯穿。全景仰视，少年勇者挥砍瞬间，天空巨大横向或微侧倾圆形符文魔法阵展开，阵心召唤半透明金白色魔法能量巨剑，剑尖朝下，自上而下贯穿远古巨龙胸口或躯干中心，巨龙受击后仰，地面爆发冲击波、碎石和烟尘。
+
+第六镜：战后收束。远景低机位，少年勇者落地站稳并收剑回稳，中远景清楚可见远古巨龙横向倒伏尸体，眼睛不再发光，战斗已经结束。`,
+    directorPrompt: `请严格按照以下 6 镜动作主线生成分镜，不要改剧情弧线，不要新增支线，不要把结尾改成继续对峙。
+
+固定分镜顺序：
+1. 压迫建立
+2. 巨龙拍地，勇者高高跳起在空中闪避
+3. 巨龙怒吼施压，勇者前景压低重心双手握剑蓄力
+4. 勇者跃至高空，单人特写，双手高举圣剑过头顶蓄力准备下劈
+5. 天空横向或微侧倾魔法阵展开，召唤半透明金白色魔法能量巨剑，剑尖朝下贯穿巨龙
+6. 勇者落地收势，后方明确保留巨龙倒伏尸体
+
+强制要求：
+- 共 6 镜，每镜固定 4 秒。
+- 这是热血爽剧战斗，不要文艺抒情，不要平淡对视。
+- 第二镜必须写清楚：只露出巨龙一只巨大前爪从上方拍地，落点砸出深坑、放射裂痕、碎石和烟尘爆开，勇者从落点旁高高跳起，在空中完成闪避。
+- 第三镜必须写清楚：巨龙是怒吼继续施压，不是喷火；勇者在前景压低重心，双手握剑摆出明显蓄力姿势。
+- 第四镜必须明确：只出现勇者一个主体，勇者位于高空，镜头仰视，双手举正常长度圣剑过头顶，剑尖朝上，准备自上而下挥砍。
+- 第五镜必须是高潮终结镜，核心视觉是：天空横向或微侧倾圆形符文魔法阵展开，阵心召唤半透明金白色魔法能量巨剑，剑尖朝下，自上而下贯穿巨龙；不要写成普通圣光柱。
+- 第六镜必须明确“巨龙尸体倒伏在地”，战斗已经结束。
+- 镜头重点优先写动作、站位、角度、攻击路径、空间关系和受力反馈；不要让大量一致性口令淹没动作描述。`,
+    storyObject: {
+      title: '勇者斩龙·爽剧版',
+      genre: '热血奇幻',
+      mood: '高燃、压迫、终结技爽感',
+      story_text: `第一镜：巨龙压迫。远景仰视，少年勇者背对镜头站在裂地前景，仰望高空中的远古巨龙，巨龙低头俯视形成压迫感。
+
+第二镜：龙爪拍地闪避。中景仰视，只露出远古巨龙的一只巨大前爪从上方猛砸焦土地面，落点砸出深坑、放射状裂痕、碎石和烟尘爆开，少年勇者从落点旁高高跳起，在空中完成闪避。
+
+第三镜：怒吼蓄力。中景仰视，远古巨龙朝少年勇者怒吼继续施压，少年勇者在前景压低重心，双手握剑摆出蓄力姿势，准备跃向高空。
+
+第四镜：高空蓄力。单人特写仰视，只出现少年勇者一个主体，勇者跃至高空悬停，双手高举正常长度圣剑过头顶，剑尖指向天空，准备下一瞬向下挥砍。
+
+第五镜：终结贯穿。全景仰视，少年勇者挥砍瞬间，天空巨大横向或微侧倾圆形符文魔法阵展开，阵心召唤半透明金白色魔法能量巨剑，剑尖朝下，自上而下贯穿远古巨龙胸口或躯干中心，巨龙受击后仰，地面爆发冲击波、碎石和烟尘。
+
+第六镜：战后收束。远景低机位，少年勇者落地站稳并收剑回稳，中远景清楚可见远古巨龙横向倒伏尸体，眼睛不再发光，战斗已经结束。`,
+      characters: [
+        { name: '少年勇者', description: '18岁左右青年男性，棕色短发，蓝色眼睛，蓝白圣骑士轻甲，白银护甲，深蓝短披风，金色十字护手银白圣剑。', personality: '坚毅、冷静、爆发力强', voice_style: '少年感、坚定' },
+        { name: '远古巨龙', description: '黑曜石鳞片，红色发光眼，弯曲黑角，粗壮前肢，巨大锋利龙爪，背部尖刺，红黑翼膜巨大双翼，长尾带尖刺。', personality: '压迫、凶暴、古老', voice_style: '低沉、威压' }
+      ],
+      scenes: [
+        { name: '焦黑平原', description_zh: '焦黑平原，焦土遍布纵横裂痕，低空烟尘翻涌，残橙夕阳压低，适合热血终结技战斗。', description_en: 'scorched plain with cracked ground, low smoke, orange sunset, cinematic anime battlefield', time_of_day: '日落' }
+      ],
+      director_prompt: `固定 6 镜，每镜 4 秒：压迫建立 → 拍地闪避 → 喷火压制 → 高空重斩 → 光柱终结 → 落地收尾并留下巨龙尸体。`
+    }
+  }
+};
+
+let _activeStoryPresetKey = '';
+
+function _selectGenreByName(name) {
+  if (!name) return;
+  const btn = Array.from(document.querySelectorAll('.genre-btn')).find(b => b.dataset.genre === name);
+  if (btn) selectGenre(btn);
+}
+
+function _matchPresetCharacters(names) {
+  const all = Array.isArray(State.characters) ? State.characters : [];
+  return (names || []).map(name => all.find(c => c && c.name === name)).filter(Boolean);
+}
+
+function _applyPresetCommon(preset) {
+  if (!preset) return;
+  _activeStoryPresetKey = Object.keys(STORY_PRESETS).find(k => STORY_PRESETS[k] === preset) || '';
+  const lengthEl = document.getElementById('storyLength');
+  if (lengthEl && preset.lengthMode) lengthEl.value = preset.lengthMode;
+  _selectGenreByName(preset.genre);
+  const styleEl = document.getElementById('styleSelect');
+  if (styleEl && preset.style) styleEl.value = preset.style;
+}
+
+function syncStoryCreatePresetHint() {
+  const key = document.getElementById('storyCreatePresetSelect')?.value || '';
+  const hint = document.getElementById('storyCreatePresetHint');
+  if (!hint) return;
+  hint.textContent = key && STORY_PRESETS[key] ? `${STORY_PRESETS[key].name}：${STORY_PRESETS[key].hint}` : '选择后可快速填入创作方向和额外要求，也可直接预览成剧本，方便录 demo。';
+}
+
+function applyStoryCreatePreset() {
+  const key = document.getElementById('storyCreatePresetSelect')?.value || '';
+  const preset = STORY_PRESETS[key];
+  if (!preset) { showNotif('请先选择一个预设剧本', 'warning'); return; }
+  _applyPresetCommon(preset);
+  const directionEl = document.getElementById('storyDirection');
+  const customEl = document.getElementById('storyCustom');
+  if (directionEl) directionEl.value = preset.direction || '';
+  if (customEl) customEl.value = preset.custom || '';
+  syncStoryCreatePresetHint();
+  showNotif(`已填入预设：${preset.name}`, 'success');
+}
+
+function previewStoryCreatePreset() {
+  const key = document.getElementById('storyCreatePresetSelect')?.value || '';
+  const preset = STORY_PRESETS[key];
+  if (!preset) { showNotif('请先选择一个预设剧本', 'warning'); return; }
+  applyStoryCreatePreset();
+  _generatedStory = JSON.parse(JSON.stringify(preset.storyObject));
+  renderStoryResult(_generatedStory);
+  showNotif(`已直接预览：${preset.name}`, 'success');
+}
+
+function sendStoryPresetToStoryboard() {
+  const key = document.getElementById('storyCreatePresetSelect')?.value || '';
+  const preset = STORY_PRESETS[key];
+  if (!preset) { showNotif('请先选择一个预设剧本', 'warning'); return; }
+  applyStoryCreatePreset();
+  showScreen('storyboard');
+  const sbPreset = document.getElementById('storyboardPresetSelect');
+  if (sbPreset) sbPreset.value = key;
+  applyStoryboardPreset();
+}
+
+function syncStoryboardPresetHint() {
+  const key = document.getElementById('storyboardPresetSelect')?.value || '';
+  const hint = document.getElementById('storyboardPresetHint');
+  if (!hint) return;
+  hint.textContent = key && STORY_PRESETS[key] ? `${STORY_PRESETS[key].name}：${STORY_PRESETS[key].hint}` : '选择预设后会自动填入剧情文本、分镜导演要求和焦黑平原场景。';
+}
+
+function applyStoryboardPreset() {
+  const key = document.getElementById('storyboardPresetSelect')?.value || '';
+  const preset = STORY_PRESETS[key];
+  if (!preset) { showNotif('请先选择一个预设故事', 'warning'); return; }
+  _applyPresetCommon(preset);
+  const storyEl = document.getElementById('storyInput');
+  const guideEl = document.getElementById('storyboardPromptGuide');
+  const sceneEl = document.getElementById('globalScene');
+  if (storyEl) storyEl.value = preset.storyText || '';
+  if (guideEl) guideEl.value = preset.directorPrompt || '';
+  if (sceneEl) sceneEl.value = preset.globalScene || '';
+  State.sceneSpec = preset.globalScene || '';
+  const matched = _matchPresetCharacters(preset.characterNames || []);
+  if (matched.length > 0) State.selectedChars = matched;
+  refreshSbSelectedChars();
+  syncStoryboardPresetHint();
+  showNotif(`已填入分镜预设：${preset.name}`, matched.length ? 'success' : 'warning');
+}
+
 
 // ══════════════════════════════════════════
 // 屏幕切换
@@ -1475,9 +1686,9 @@ async function generateCharacter() {
   if (!description) { showNotif('请输入外貌描述','error'); return; }
   const btn=document.getElementById('btnCreateChar');
   btn.disabled=true; btn.textContent='生成中…';
-  showLoader('NovelAI 正在生成角色立绘（约30秒）…');
+  showLoader('Seedream 5.0 Lite 正在生成角色立绘（约30秒）…');
   const data=await apiPost('/api/character/create',{name,description,personality,voice_style:voice,style});
-  hideLoader(); btn.disabled=false; btn.textContent='✦ NovelAI 生成立绘';
+  hideLoader(); btn.disabled=false; btn.textContent='✦ Seedream 5.0 Lite 生成立绘';
   if (data.success) {
     showNotif(`角色「${name}」创建成功！`,'success');
     const img=document.getElementById('charPreviewImg');
@@ -1500,7 +1711,7 @@ async function deleteCharacter(charId) {
   } catch(e) { showNotif(`删除出错：${e.message}`,'error'); }
 }
 async function regenCharImage(charId) {
-  showLoader('NovelAI 重新生成角色图像…');
+  showLoader('Seedream 5.0 Lite 重新生成角色图像…');
   const r=await fetch(`/api/character/regen_image/${charId}`,{method:'POST',credentials:'same-origin'});
   const d=await r.json(); hideLoader();
   if (d.success) { showNotif('图像已重新生成','success'); await loadCharacterLibrary(); }
@@ -1565,7 +1776,7 @@ async function saveCharEditAndRegen(charId) {
     });
   } catch(e) {}
   // 重新生成立绘
-  showLoader('NovelAI 重新生成角色立绘中…（约30秒）');
+  showLoader('Seedream 5.0 Lite 重新生成角色立绘中…（约30秒）');
   try {
     const r = await fetch(`/api/character/regen_image/${charId}`, {method:'POST', credentials:'same-origin'});
     const d = await r.json();
@@ -1620,7 +1831,7 @@ async function generatePanorama() {
   document.getElementById('panoViewsGrid').innerHTML = `
     <div class="pano-placeholder" style="grid-column:1/-1;">
       <div style="font-size:24px;animation:spin 1s linear infinite;">⟳</div>
-      <div style="margin-top:8px;">NovelAI 生成场景图中…</div>
+      <div style="margin-top:8px;">Seedream 5.0 Lite 生成场景图中…</div>
     </div>`;
   document.getElementById('panoEquirectStrip').style.display='none';
 
@@ -1780,6 +1991,7 @@ async function _runStoryboardSSE() {
   const storyText = document.getElementById('storyInput').value.trim();
   const style     = document.getElementById('styleSelect').value;
   const scene     = document.getElementById('globalScene').value.trim();
+  const promptGuide = document.getElementById('storyboardPromptGuide')?.value.trim() || '';
   if (!storyText) { showNotif('请输入剧情文本','error'); return; }
 
   const chars = State.selectedChars.length>0 ? State.selectedChars : State.characters;
@@ -1812,8 +2024,11 @@ async function _runStoryboardSSE() {
         panorama_local: State.panoramaLocal,
         panorama_views: State.panoramaViews,
         scene_spec: State.sceneSpec,
+        custom_requirements: promptGuide,
+        storyboard_prompt_guide: promptGuide,
         engine,
         quality,
+        length_mode: document.getElementById('storyLength')?.value || '中篇',
       }),
     });
     const reader=resp.body.getReader();
@@ -2103,6 +2318,7 @@ async function regenShot(idx) {
     panorama_views: State.panoramaViews,
     characters: State.selectedChars.length>0 ? State.selectedChars : State.characters,
     prev_shot_ref: prevRef,
+    reference_mode: 'guide',
   });
   hideLoader();
   if (data.success) {
@@ -2174,6 +2390,7 @@ async function regenWithAction(idx) {
     scene_spec: State.sceneSpec,
     panorama_views: State.panoramaViews,
     characters: State.selectedChars.length>0 ? State.selectedChars : State.characters,
+    reference_mode: 'guide',
   });
   hideLoader();
   if (data.success) {
@@ -2207,7 +2424,9 @@ function addShotAfter(idx) {
     dialogue: '',
     characters_in_shot: State.shots[idx]?.characters_in_shot || [],
     emotion: 'calm',
-    duration_hint: 3,
+    duration_hint: 4,
+    video_duration: 4,
+    duration: 4,
     image_url: '',
     image_error: '',
   };
@@ -2245,6 +2464,7 @@ async function generateScriptOnly() {
   const storyText = document.getElementById('storyInput').value.trim();
   const style     = document.getElementById('styleSelect').value;
   const scene     = document.getElementById('globalScene').value.trim();
+  const promptGuide = document.getElementById('storyboardPromptGuide')?.value.trim() || '';
   if (!storyText) { showNotif('请输入剧情文本','error'); return; }
 
   const chars = State.selectedChars.length>0 ? State.selectedChars : State.characters;
@@ -2257,6 +2477,8 @@ async function generateScriptOnly() {
       style,
       global_scene: scene,
       scene_spec: State.sceneSpec,
+      custom_requirements: promptGuide,
+      storyboard_prompt_guide: promptGuide,
     });
     hideLoader();
 
@@ -2265,7 +2487,7 @@ async function generateScriptOnly() {
       return;
     }
 
-    _scriptShots = data.shots || [];
+    _scriptShots = (data.shots || []).map((s,i)=>_normalizeScriptShot(s,i));
     _scriptProjectId = data.project_id || '';
 
     // 渲染脚本表格
@@ -2276,6 +2498,50 @@ async function generateScriptOnly() {
     hideLoader();
     showNotif('脚本生成出错: ' + e.message, 'error');
   }
+}
+
+
+
+function _scriptActionText(s) {
+  // 表格“动作”列只显示给人看的短动作，不直接用于生图/视频。
+  return (s.action_zh || s.action || '').trim();
+}
+
+function _scriptImagePromptText(s) {
+  // Seedream 5.0 Lite 首帧图 / 分镜图提示词。重绘图片主要改这个字段。
+  return (s.image_prompt_zh || s.first_frame_prompt_zh || s.jimeng_ref_prompt || s.visual_action_prompt_zh || s.action_detail_zh || s.action_zh || s.action || '').trim();
+}
+
+function _scriptVideoPromptText(s) {
+  // Seedance 1.5 Pro 图生视频运动提示词。只描述4秒运动，不用于图片生成。
+  return (s.video_prompt_zh || s.video_prompt || '').trim();
+}
+
+function _compactVideoPromptFallback(s) {
+  const action = _scriptActionText(s) || '当前镜头动作继续自然展开';
+  return `保持首帧角色外观和场景不变。4秒内，${action}，环境烟尘、衣物或光效随动作自然变化，镜头平稳推进或轻微震动。`;
+}
+
+function _normalizeScriptShot(s, i) {
+  if (!s) s = {};
+  const displayAction = _scriptActionText(s) || (s.action_detail_zh || s.visual_action_prompt_zh || '').split(/[。；;]/)[0].slice(0, 70);
+  const imagePrompt = _scriptImagePromptText(s) || displayAction;
+  const videoPrompt = _scriptVideoPromptText(s) || _compactVideoPromptFallback({...s, action_zh: displayAction});
+  s.index = i + 1;
+  s.action = displayAction;
+  s.action_zh = displayAction;
+  s.image_prompt_zh = imagePrompt;
+  s.first_frame_prompt_zh = imagePrompt;
+  // 兼容旧字段，但前端不再展示“Seedream 5.0 Lite首帧图提示词”这个概念。
+  s.jimeng_ref_prompt = imagePrompt;
+  s.action_detail_zh = s.action_detail_zh || imagePrompt;
+  s.visual_action_prompt_zh = s.visual_action_prompt_zh || imagePrompt;
+  s.video_prompt_zh = videoPrompt;
+  s.video_prompt = videoPrompt;
+  s.duration_hint = 4;
+  s.video_duration = 4;
+  s.duration = 4;
+  return s;
 }
 
 function _renderScriptTable() {
@@ -2302,7 +2568,7 @@ function _renderScriptTable() {
       </td>
       <td style="padding:4px;border:1px solid var(--border);">
         <textarea data-field="action" data-idx="${i}" onchange="_updateScriptField(this)" rows="2"
-          style="width:100%;background:rgba(255,255,255,.04);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px;font-size:11px;resize:vertical;">${s.action||''}</textarea>
+          style="width:100%;background:rgba(255,255,255,.04);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px;font-size:11px;resize:vertical;">${_scriptActionText(s)}</textarea>
       </td>
       <td style="padding:4px;border:1px solid var(--border);">
         <select data-field="emotion" data-idx="${i}" onchange="_updateScriptField(this)"
@@ -2315,8 +2581,12 @@ function _renderScriptTable() {
           style="width:100%;background:rgba(255,255,255,.04);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px;font-size:11px;resize:vertical;">${s.dialogue||''}</textarea>
       </td>
       <td style="padding:4px;border:1px solid var(--border);">
-        <textarea data-field="video_prompt" data-idx="${i}" onchange="_updateScriptField(this)" rows="2"
-          style="width:100%;background:rgba(251,191,36,.05);color:#fcd34d;border:1px solid rgba(251,191,36,.2);border-radius:4px;padding:4px;font-size:10px;resize:vertical;">${s.video_prompt||''}</textarea>
+        <textarea data-field="image_prompt_zh" data-idx="${i}" onchange="_updateScriptField(this)" rows="3"
+          style="width:100%;background:rgba(59,130,246,.05);color:#93c5fd;border:1px solid rgba(59,130,246,.25);border-radius:4px;padding:4px;font-size:10px;resize:vertical;">${_scriptImagePromptText(s)}</textarea>
+      </td>
+      <td style="padding:4px;border:1px solid var(--border);">
+        <textarea data-field="video_prompt_zh" data-idx="${i}" onchange="_updateScriptField(this)" rows="3"
+          style="width:100%;background:rgba(45,212,191,.05);color:#5eead4;border:1px solid rgba(45,212,191,.25);border-radius:4px;padding:4px;font-size:10px;resize:vertical;">${_scriptVideoPromptText(s)}</textarea>
       </td>
       <td style="padding:4px;border:1px solid var(--border);text-align:center;">
         <button onclick="removeScriptRow(${i})" style="background:none;border:none;color:var(--error);cursor:pointer;font-size:14px;" title="删除此镜">✕</button>
@@ -2331,11 +2601,26 @@ function _updateScriptField(el) {
   if (isNaN(idx) || !_scriptShots[idx]) return;
 
   if (field === 'characters_in_shot') {
-    // 逗号分隔的角色列表
     _scriptShots[idx][field] = el.value.split(',').map(s=>s.trim()).filter(Boolean);
+  } else if (field === 'action') {
+    const v = el.value.trim();
+    _scriptShots[idx].action = v;
+    _scriptShots[idx].action_zh = v;
+  } else if (field === 'image_prompt_zh') {
+    const v = el.value.trim();
+    _scriptShots[idx].image_prompt_zh = v;
+    _scriptShots[idx].first_frame_prompt_zh = v;
+    _scriptShots[idx].jimeng_ref_prompt = v; // 兼容旧生图字段
+    _scriptShots[idx].visual_action_prompt_zh = v;
+    _scriptShots[idx].action_detail_zh = v;
+  } else if (field === 'video_prompt_zh') {
+    const v = el.value.trim();
+    _scriptShots[idx].video_prompt_zh = v;
+    _scriptShots[idx].video_prompt = v; // 兼容旧视频字段
   } else {
     _scriptShots[idx][field] = el.value;
   }
+  _scriptShots[idx] = _normalizeScriptShot(_scriptShots[idx], idx);
 }
 
 function addScriptRow() {
@@ -2345,11 +2630,19 @@ function addScriptRow() {
     camera_angle: '平视',
     scene_description: '',
     action: '',
+    action_zh: '',
+    action_detail_zh: '',
+    visual_action_prompt_zh: '',
+    image_prompt_zh: '',
+    first_frame_prompt_zh: '',
     characters_in_shot: [],
     emotion: 'calm',
     dialogue: '',
+    video_prompt_zh: '',
     video_prompt: '',
-    duration_hint: 3,
+    duration_hint: 4,
+    video_duration: 4,
+    duration: 4,
   });
   _renderScriptTable();
 }
@@ -2376,8 +2669,8 @@ async function confirmScript() {
   const scene     = document.getElementById('globalScene').value.trim();
   const chars     = State.selectedChars.length>0 ? State.selectedChars : State.characters;
 
-  // 重新编号
-  _scriptShots.forEach((s,i) => s.index = i+1);
+  // 重新编号并同步字段
+  _scriptShots = _scriptShots.map((s,i)=>_normalizeScriptShot(s,i));
 
   const progressWrap = document.getElementById('progressWrap');
   progressWrap.style.display='block';
@@ -2417,8 +2710,12 @@ async function confirmScript() {
         shot,
         style,
         scene_spec: State.sceneSpec,
+        scene_spec_zh: State.sceneSpecZh || State.sceneSpec || '',
         panorama_views: State.panoramaViews,
-        characters: chars.map(c => c.name || c),
+        characters: chars,
+        engine: document.getElementById('engineSelect')?.value || 'doubao',
+        quality: document.getElementById('qualitySelect')?.value || '16:9',
+        reference_mode: 'guide',
       });
 
       if (data.success) {
@@ -2594,7 +2891,7 @@ function refreshPreviewPage() {
     let statusLabel = hasVideo ? '✓ 视频已就绪' : isPerson ? '待生成' : '自动运镜';
 
     // 提示词(优先用LLM生成的)
-    const refPrompt = s.jimeng_ref_prompt || s.jimeng_prompt || '';
+    const refPrompt = s.image_prompt_zh || s.first_frame_prompt_zh || s.jimeng_ref_prompt || s.jimeng_prompt || '';
     const transPrompt = s.jimeng_trans_prompt || '';
 
     html += `
@@ -2733,7 +3030,7 @@ async function copyToClipboard(encodedText, el) {
   try {
     const text = decodeURIComponent(encodedText);
     await navigator.clipboard.writeText(text);
-    showNotif('提示词已复制！去豆包/即梦粘贴使用','success');
+    showNotif('提示词已复制','success');
     if (el) { el.style.borderColor = '#4ade80'; setTimeout(() => el.style.borderColor = '', 1500); }
   } catch(e) { showNotif('复制失败','error'); }
 }
@@ -2744,7 +3041,7 @@ async function copyPrompt(el, type, i) {
   const validShots = State.shots.filter(Boolean);
   let text = '';
   if (type === 'ref') {
-    text = shot.jimeng_ref_prompt || shot.jimeng_prompt || '';
+    text = shot.image_prompt_zh || shot.first_frame_prompt_zh || shot.jimeng_ref_prompt || shot.jimeng_prompt || '';
   } else {
     text = (i > 0 && validShots[i-1]?.jimeng_trans_prompt) ? validShots[i-1].jimeng_trans_prompt : shot.jimeng_trans_prompt || '';
   }
@@ -2787,7 +3084,7 @@ function openJimengRef(i) {
   a.click();
 
   // 复制提示词
-  const prompt = shot.jimeng_ref_prompt || shot.jimeng_prompt || '';
+  const prompt = shot.video_prompt_zh || shot.video_prompt || shot.jimeng_trans_prompt || '';
   navigator.clipboard.writeText(prompt).catch(()=>{});
 
   _showJimengGuide('智能参考', [
@@ -2834,7 +3131,7 @@ function openJimengStartEnd(i) {
   const editBox = document.getElementById(`transEdit_${idx}`);
   const prompt = (editBox && editBox.value.trim() && editBox.value.trim() !== '(生成分镜后自动填入)')
     ? editBox.value.trim()
-    : shot.jimeng_trans_prompt || shot.video_prompt || shot.jimeng_ref_prompt || '';
+    : shot.video_prompt_zh || shot.video_prompt || shot.jimeng_trans_prompt || '';
 
   navigator.clipboard.writeText(prompt).catch(() => {});
 
@@ -3003,39 +3300,35 @@ async function seedanceBatchGenerate() {
   if (!shots.length) { showNotif('请先生成分镜（需要有分镜图）', 'error'); return; }
 
   const resolution = document.getElementById('seedanceResolution')?.value || '720p';
-  const durSel = document.getElementById('seedanceDuration')?.value || 'auto';
-  const durationOverride = durSel === 'auto' ? null : parseInt(durSel, 10);
+  const durSel = document.getElementById('seedanceDuration')?.value || '4';
+  // demo 固定每镜 4 秒；即使误选 auto，也按 4 秒提交，避免总时长漂移。
+  const durationOverride = durSel === 'auto' ? 4 : parseInt(durSel, 10);
   const list = document.getElementById('seedanceProgressList');
   list.style.display = 'block';
   _seedanceShotVideos = {};
 
-  // 1. 计算每镜时长（若用户手动设置则跳过智能计算）
+  // 1. 固定每镜 4 秒，避免总时长漂移。
   const durMap = {};
-  let totalDur = 0;
-  if (durationOverride) {
-    shots.forEach(s => { durMap[s.index] = durationOverride; totalDur += durationOverride; });
-  } else {
-    const dRes = await apiPost('/api/video/seedance/calc_durations', { shots });
-    if (dRes.success) {
-      dRes.durations.forEach(d => { durMap[d.shot_index] = d.duration; totalDur += d.duration; });
-    } else {
-      shots.forEach(s => { durMap[s.index] = 5; totalDur += 5; });
-    }
-  }
+  shots.forEach(s => { durMap[s.index] = durationOverride; });
 
-  // 渲染每镜进度行
-  list.innerHTML = `
-    <div style="padding:8px 10px;background:rgba(138,92,255,.06);border-radius:8px;margin-bottom:8px;font-size:12px;color:var(--text);">
-      🎬 逐镜生成 <b>${shots.length}</b> 个分镜视频，智能时长，预计总时长 <b>${totalDur}</b> 秒
-    </div>
-    <div id="sdance_rows"></div>
-    <div id="sdance_concat_area" style="display:none;"></div>`;
-
-  // 2. 创建所有任务（首尾帧模式：Shot[i]→Shot[i+1]）
+  // 2. 创建所有任务（每个分镜 1 个视频，前 N-1 段保留首尾帧过渡）
+  list.innerHTML = `<div style="padding:8px 10px;background:rgba(138,92,255,.06);border-radius:8px;margin-bottom:8px;font-size:12px;color:var(--text);">正在提交 Seedance 视频任务…</div>`;
   const cr = await apiPost('/api/video/seedance/create_per_shot_tasks', {
     shots, resolution, duration: durationOverride
   });
-  if (!cr.success) { showNotif('任务创建失败: ' + cr.message, 'error'); return; }
+  if (!cr.success) { showNotif('任务创建失败: ' + (cr.message || '未知错误'), 'error'); return; }
+
+  const totalDur = cr.estimated_total_duration || cr.tasks.reduce((s,t)=>s+(t.duration||durationOverride),0);
+  list.innerHTML = `
+    <div style="padding:8px 10px;background:rgba(138,92,255,.06);border-radius:8px;margin-bottom:8px;font-size:12px;color:var(--text);">
+      🎬 逐镜生成 <b>${cr.tasks.length}</b> 个分镜视频，每镜 <b>${durationOverride}</b> 秒，预计总时长 <b>${totalDur}</b> 秒
+      <div style="margin-top:8px;background:rgba(255,255,255,.08);height:5px;border-radius:3px;overflow:hidden;">
+        <div id="sdance_global_fill" style="height:5px;width:0%;background:linear-gradient(90deg,var(--purple),var(--teal));transition:width .4s;"></div>
+      </div>
+      <div id="sdance_global_msg" style="margin-top:5px;font-size:11px;color:var(--muted);">等待任务开始…</div>
+    </div>
+    <div id="sdance_rows"></div>
+    <div id="sdance_concat_area" style="display:none;"></div>`;
 
   // 根据任务渲染行（使用后端返回的任务信息，含首尾帧标记）
   const rowsEl = document.getElementById('sdance_rows');
@@ -3242,11 +3535,24 @@ function _showShotInPlayer(url, shotIdx) {
   showNotif(`✓ 镜次 ${shotIdx} 视频已生成，播放器已更新`, 'success', 3000);
 }
 
+function _updateSeedanceGlobalProgress() {
+  const bars = Array.from(document.querySelectorAll('[id^="sdbar_"]'));
+  if (!bars.length) return;
+  const values = bars.map(b => parseFloat(b.style.width || '0') || 0);
+  const avg = Math.round(values.reduce((a,b)=>a+b,0) / values.length);
+  const done = values.filter(v => v >= 100).length;
+  const fill = document.getElementById('sdance_global_fill');
+  const msg = document.getElementById('sdance_global_msg');
+  if (fill) fill.style.width = avg + '%';
+  if (msg) msg.textContent = `总体进度：${done}/${bars.length} 镜完成，${avg}%`;
+}
+
 function _setShotStatus(idx, text, pct, isError=false) {
   const bar = document.getElementById(`sdbar_${idx}`);
   const st  = document.getElementById(`sdst_${idx}`);
   if (bar) { bar.style.width = pct + '%'; bar.style.background = isError ? '#f66' : pct===100 ? 'var(--teal)' : 'var(--purple2)'; }
   if (st)  { st.textContent = text; st.style.color = isError ? '#f66' : pct===100 ? 'var(--teal)' : 'var(--muted)'; }
+  _updateSeedanceGlobalProgress();
 }
 
 async function _autoConcat(shots) {
@@ -3325,7 +3631,7 @@ async function seedanceGenerateCurrent() {
 function copyAllJimengPrompts() {
   const shots = State.shots.filter(Boolean);
   if (!shots.length) { showNotif('没有分镜数据', 'error'); return; }
-  const lines = shots.map(s => `SHOT ${s.index}: ${s.jimeng_ref_prompt || s.action_zh || s.action || ''}`).join('\n\n');
+  const lines = shots.map(s => `SHOT ${s.index}: ${s.image_prompt_zh || s.jimeng_ref_prompt || s.action_zh || s.action || ''}`).join('\n\n');
   navigator.clipboard.writeText(lines).then(() => showNotif('已复制全部提示词', 'success'));
 }
 
@@ -3518,7 +3824,7 @@ function openJimeng(idx) {
   dlLink.download = `shot_${idx+1}.png`;
   dlLink.click();
 
-  // 2. 生成即梦提示词并复制到剪贴板
+  // 2. 生成Seedream 5.0 Lite首帧图提示词并复制到剪贴板
   const prompt = _genJimengPrompt(shot);
   navigator.clipboard.writeText(prompt).catch(()=>{});
 
@@ -3790,8 +4096,8 @@ const _STORY_EXAMPLES = [
   },
   {
     genre: '奇幻', icon: '🐉', title: '勇者对龙',
-    sub: '召唤光从天而降 · 少年跃起挥剑斩巨龙',
-    text: '少年穿越异世界成为勇者，独自站在焦黑的平原上，面对盘旋而来的远古巨龙。龙的翅膀展开遮住了整片天空，一声怒吼震碎了脚下的岩石。少年攥紧圣剑，金色光芒从剑身迸发，他猛地跃起，踩着龙身节节攀升，在龙头正上方举剑刺下。龙发出最后的嘶鸣，轰然倒地，地面的裂缝向四方延伸，少年站在龙角上，披着余晖的风。'
+    sub: '高燃终结技 · 单主体帅气镜头 · 圣光斩龙',
+    text: "少年穿越异世界成为18岁左右青年勇者，在焦黑平原终结唯一的远古巨龙。请生成6张高燃日漫战斗分镜，强调压迫感、主角自信、巨龙喷火、从天而降一剑斩杀、圣光终结技和胜利定格。\n\n第1镜：焦黑平原远景，远古巨龙遮天压近，勇者站在前景持剑迎战，体型差极大。\n第2镜：勇者自信特写，嘴角微笑或摆出战斗姿势，眼神坚定，圣剑微微发光，披风被热风吹起。\n第3镜：巨龙怒吼喷火，龙头占据画面上方，火焰向镜头方向汹涌压来，压迫感极强。\n第4镜：低机位仰角，画面主体只有勇者，勇者从高空急速下坠，高举圣剑，做出从天而降的一剑斩杀姿态；圣光护罩包裹全身，周围火焰被护罩和下坠气流向两侧分开，披风与发丝强烈扬起。\n第5镜：圣光柱从天空垂直落下笼罩巨龙，地面裂纹发光，烟尘和碎石被冲击波掀起，巨龙在光柱中后仰重创。\n第6镜：勇者落地背对镜头，圣剑垂在身侧或插入地面，身后远处巨龙巨大身体倒伏在烟尘中，残阳与圣光余辉照亮战场。\n\n要求：保持同一焦黑平原战场；巨龙始终远大于勇者；每镜只表现一个关键瞬间；不要双龙，不要复制勇者；不要把圣剑画成超长激光束；第4镜只表现勇者单主体从天而降，不表现已经斩中巨龙；第5镜只表现光柱命中后的结果；第6镜是胜利定格，不再继续打斗。"
   },
   {
     genre: '科幻', icon: '💥', title: '平凡觉醒',
@@ -4001,37 +4307,45 @@ async function applyStoryToWorkflow() {
   if (!_generatedStory) { showNotif('请先生成剧本', 'error'); return; }
   const story = _generatedStory;
 
-  // ★ 询问用户是否立即生成立绘（会消耗 NAI Anlas）
+  // ★ 询问用户是否立即生成角色立绘（会消耗 Seedream 点数）
+  // v16：点取消时不再创建“无立绘角色数据”，避免角色库出现空白人物框。
   const genImages = confirm(
-    `即将导入 ${(story.characters||[]).length} 个角色到角色库。\n\n` +
-    `是否同时生成 NAI 立绘？\n（每个角色消耗约 10 Anlas，共约 ${(story.characters||[]).length * 10} Anlas）\n\n` +
-    `点「确定」= 导入并生成立绘\n点「取消」= 只导入角色数据（不消耗 Anlas）`
+    `检测到剧本中有 ${(story.characters||[]).length} 个角色。\n\n` +
+    `是否现在创建角色并生成 Seedream 立绘？\n（每个角色消耗约 10 点数，共约 ${(story.characters||[]).length * 10} 点数）\n\n` +
+    `点「确定」= 创建角色并生成立绘\n点「取消」= 不创建角色，直接进入分镜创作`
   );
 
-  showLoader(genImages ? '正在创建角色并生成立绘…' : '正在导入角色数据…');
   let createdCount = 0;
-
-  for (const c of (story.characters || [])) {
-    try {
-      const payload = {
-        name: c.name,
-        description: c.description || '',
-        personality: c.personality || '',
-        voice_style: c.voice_style || '',
-        style: document.getElementById('styleSelect')?.value || '日漫',
-        skip_image: !genImages,   // ★ 传给后端，跳过 NAI 生成
-      };
-      const r = await apiPost('/api/character/create', payload);
-      if (r.success) createdCount++;
-    } catch (e) {
-      console.error('创建角色失败:', c.name, e);
+  if (genImages) {
+    showLoader('正在创建角色并生成立绘…');
+    for (const c of (story.characters || [])) {
+      try {
+        const payload = {
+          name: c.name,
+          description: c.description || '',
+          personality: c.personality || '',
+          voice_style: c.voice_style || '',
+          style: document.getElementById('styleSelect')?.value || '日漫',
+          skip_image: false,
+        };
+        const r = await apiPost('/api/character/create', payload);
+        if (r.success) createdCount++;
+      } catch (e) {
+        console.error('创建角色失败:', c.name, e);
+      }
     }
+    hideLoader();
   }
-  hideLoader();
 
   // 2. 填充分镜页面的剧本文本和场景
   const storyInput = document.getElementById('storyInput');
   if (storyInput) storyInput.value = story.story_text || '';
+
+  const activePreset = _activeStoryPresetKey ? STORY_PRESETS[_activeStoryPresetKey] : null;
+  const guideInput = document.getElementById('storyboardPromptGuide');
+  if (guideInput) guideInput.value = (story.director_prompt || activePreset?.directorPrompt || guideInput.value || '');
+  const lengthInput = document.getElementById('storyLength');
+  if (lengthInput && activePreset?.lengthMode) lengthInput.value = activePreset.lengthMode;
 
   const sceneInput = document.getElementById('globalScene');
   if (sceneInput && story.scenes && story.scenes.length > 0) {
@@ -4052,16 +4366,27 @@ async function applyStoryToWorkflow() {
     State.sceneSpec = '';
   }
 
-  // 3. 刷新角色库
-  await loadCharacterLibrary();
-
-  const tip = genImages
-    ? `已创建 ${createdCount} 个角色并生成立绘！`
-    : `已导入 ${createdCount} 个角色数据（无立绘），可在角色库手动生成。`;
-  showNotif(tip + ' 正在跳转…', 'success', 3000);
-  setTimeout(() => showScreen('characters'), 1500);
+  // 3. 跳转逻辑
+  if (genImages) {
+    await loadCharacterLibrary();
+    showNotif(`已创建 ${createdCount} 个角色并生成立绘！正在跳转…`, 'success', 3000);
+    setTimeout(() => showScreen('characters'), 1500);
+  } else {
+    // v17：不创建空白角色卡片；先进入角色生成/角色库，让用户选择已有角色或手动生成角色。
+    showNotif('已应用剧本与场景，未创建角色卡片。请先选择已有角色或生成角色参考图。', 'success', 3200);
+    setTimeout(async () => {
+      showScreen('characters');
+      try { await loadCharacterLibrary(); } catch(e) {}
+      try { refreshSbSelectedChars(); } catch(e) {}
+    }, 900);
+  }
 }
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
